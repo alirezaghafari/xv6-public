@@ -537,9 +537,8 @@ int
 procCount(void){
   struct proc *p;
   int counter=0;
-  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     if(p->state != UNUSED)
       counter++;
-  }
   return counter;
 }
